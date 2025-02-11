@@ -23,4 +23,12 @@ default:
 }
 
 //Q.3
-
+//a.
+//for loop” that displays a string in the reverse order
+let string1 = "Hello there!"
+let num1 = string1.count
+for i in 0...num1 {
+    let char1 = string1[num1-i]
+    print(char1)
+}
+//b.
