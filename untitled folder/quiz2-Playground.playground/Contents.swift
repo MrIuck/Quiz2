@@ -32,3 +32,4 @@ for i in 0...num1 {
     print(char1)
 }
 //b.
+//code segment that reverses each word in a String
