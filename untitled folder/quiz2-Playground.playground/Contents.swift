@@ -130,3 +130,76 @@ func trufls(ints: [Int], ints2: Int) -> Bool {
 }
 
 //Q. 5
+class CountryStatistics { //object
+    var cName:String?//Country Name
+    var ccName:String?//Capital City
+    var pop1:Int?//Population
+    var area1:Int?//Area (in square miles)
+    
+    init(cName:String,ccName:String,pop1:Int,area1:Int) {
+        self.cName = cName
+        self.ccName = ccName
+        self.pop1 = pop1
+        self.area1 = area1
+    }
+    func get_population() -> Int {
+        return(self.pop1!)
+    }
+    func get_area() -> Int {
+        return(self.area1!)
+    }
+}
+
+//Q. 6
+//a.
+let country1 = CountryStatistics(cName: "USA", ccName: "Washington", pop1: 334900000, area1: 3809525) //just random
+let country2 = CountryStatistics(cName: "Japan", ccName: "Tokyo", pop1: 124500000, area1: 145934)
+let country3 = CountryStatistics(cName: "South Korea", ccName: "Seoul", pop1: 51710000, area1: 37901)
+let country4 = CountryStatistics(cName: "Brazil", ccName: "Brasilia", pop1: 216400000, area1: 3287357)
+let country5 = CountryStatistics(cName: "France", ccName: "Paris", pop1: 68170000, area1: 248573)
+
+var countdictionary: [String:CountryStatistics] = [:]
+
+countdictionary["USA"] = country1
+countdictionary["Japan"] = country2
+countdictionary["South Korea"] = country3
+countdictionary["Brazil"] = country4
+countdictionary["France"] = country5
+
+//b.
+
+/*
+var con1: [String:CountryStatistics] = [:]
+var con2  = 0
+
+for (key, country) in countdictionary {
+    if () {
+        
+    }
+}
+*/
+
+//c.
+ 
+//Q. 7
+var students : [[String:Any]] =
+[[ "firstName": "John", "lastName": "Wilson", "gpa": 2.4 ], [
+"firstName": "Nancy", "lastName": "Smith", "gpa": 3.5 ], [
+"firstName": "Michael", "lastName": "Liu", "gpa": 3.1 ]]
+
+var beststudent: [String:Any] = [:]
+var largestGPA  = 0.0
+
+for dict in students {
+    if let gpa = dict["gpa"] as? Double {
+        if gpa > largestGPA {
+            largestGPA = gpa
+            beststudent = dict
+        }
+    }
+}
+
+if let nameofStudent1 = beststudent["firstName"] as? String, let nameofStudent2 = beststudent["lastName"] as? String {
+    var yeahFinished = nameofStudent1 + " " + nameofStudent2
+    print("\(nameofStudent1) \(nameofStudent2)")
+}
