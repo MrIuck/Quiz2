@@ -63,3 +63,70 @@ string2 = string3 + " " + string4
 print(string2)
  
 //Q.4
+//part 1.
+let chars: [Character] = ["H", "H", "E", "e", "h", "h"]
+
+let (a, b, c) = getChars(chars: chars)//by number of vowels, uppercase letters and lowercase letters
+print(a)
+print(b)
+print(c)
+
+func getChars(chars: [Character]) -> (Int, Int, Int) {
+    var a = 0
+    var b = 0
+    var c = 0
+    for char in chars {
+        if (char.isUppercase) {
+            b+=1
+        } else if (char.isLowercase) {
+            c+=1
+        }
+        if (char == "A" || char == "E" || char == "I" || char == "O" || char == "U" || char == "a" || char == "e" || char == "i" || char == "o" || char == "u") {//A, E, I, O and U
+            a+=1
+        }
+    }
+    return (a, b, c)
+}
+
+//part 2.
+let strings: [String] = ["Biggest", "middle", "small"]
+
+let (longest, shortest) = getSL(strings: strings)//length of the shortest and the longest strings in the array
+print(longest)
+print(shortest)
+
+func getSL(strings: [String]) -> (Int, Int) {
+    var a = strings[0]
+    var b = strings[0]
+    var c = 0
+    var d = 0
+    for string in strings {
+        if (a.count < string.count) {
+            a = string
+        }
+        if (b.count > string.count) {
+            b = string
+        }
+    }
+    c = a.count
+    d = b.count
+    return (c, d)
+}
+
+//part 3.
+let ints: [Int] = [3, 6, 9]
+let ints2 = 3 //number that can be changed
+
+let (truflshuh) = trufls(ints: ints, ints2: ints2)// returns true if the item to be searched in the array, return false otherwise
+print(truflshuh)
+
+func trufls(ints: [Int], ints2: Int) -> Bool {
+    for int in ints {
+        if (int  == ints2) {
+            return true
+        }
+    }
+    return false
+}
+
+//Q. 5
